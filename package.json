@@ -1,0 +1,49 @@
+{
+  "name": "sjsitapp-image-service",
+  "version": "1.0.0",
+  "main": "app.js",
+  "description": "An application for the San Jose Sharks Ice Team.",
+  "repository": "https://github.com/mattcarlotta/SJSITApp-Image-Service",
+  "author": "Matt Carlotta",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=8",
+    "npm": ">=3"
+  },
+  "scripts": {
+    "dev": "nodemon --exec babel-node ./app.js",
+    "pre-commit": "npm run lint --silent",
+    "start": "babel-node app.js",
+    "lint": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run pre-commit"
+    }
+  },
+  "dependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.4"
+  },
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "prettier": "^1.18.2"
+  }
+}
