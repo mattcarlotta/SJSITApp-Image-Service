@@ -1,6 +1,6 @@
 {
   "name": "sjsitapp-image-service",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "app.js",
   "description": "An application for the San Jose Sharks Ice Team.",
   "repository": "https://github.com/mattcarlotta/SJSITApp-Image-Service",
@@ -12,7 +12,7 @@
     "npm": ">=3"
   },
   "scripts": {
-    "build": "babel ./ -d build --no-comments --ignore node_modules",
+    "build": "rimraf build && babel ./ -d build --no-comments --ignore node_modules",
     "dev": "nodemon --exec babel-node ./app.js",
     "pre-commit": "npm run lint --silent",
     "start": "babel-node app.js",
@@ -47,6 +47,7 @@
     "eslint-plugin-prettier": "^3.1.0",
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.0"
   }
 }
