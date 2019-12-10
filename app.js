@@ -12,6 +12,12 @@ moment.tz.setDefault("America/Los_Angeles");
 // EXPRESS SERVE IMAGES
 //= ===========================================================//
 morgan.token("date", () => moment().format("MMMM Do YYYY, h:mm:ss a"));
+morgan.token(
+  "remote-addr",
+  req => req.headers["x-real-ip"]
+    || req.headers["x-forwarded-for"]
+    || req.connection.remoteAddress,
+);
 
 app.use(cors());
 app.use(
